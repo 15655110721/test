@@ -1,83 +1,24 @@
-module github.com/cayleygraph/cayley
+module hyang.cn/test4
 
-go 1.12
+go 1.18
+
+require github.com/spf13/viper v1.12.0
 
 require (
-	cloud.google.com/go v0.25.0
-	github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973
-	github.com/davecgh/go-spew v1.1.0
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/dvwright/xss-mw v0.0.0-20170109072128-5b2fd362dcaf
-	github.com/fsnotify/fsnotify v1.4.7
-	github.com/ghodss/yaml v1.0.0
-	github.com/gin-contrib/sse v0.0.0-20170109093832-22d885f9ecc7
-	github.com/gin-gonic/gin v1.1.5-0.20170702092826-d459835d2b07
-	github.com/go-sql-driver/mysql v1.4.0
-	github.com/gogo/googleapis v1.0.0
-	github.com/gogo/protobuf v1.1.1
-	github.com/golang/protobuf v1.1.0
-	github.com/google/gofuzz v0.0.0-20170612174753-24818f796faf
-	github.com/googleapis/gnostic v0.2.0
-	github.com/gorilla/context v1.1.1
-	github.com/gorilla/mux v1.6.2
-	github.com/gorilla/websocket v1.2.0
-	github.com/hashicorp/errwrap v0.0.0-20180715044906-d6c0cd880357
-	github.com/hashicorp/go-multierror v0.0.0-20180717150148-3d5d8f294aa0
-	github.com/hashicorp/golang-lru v0.0.0-20180201235237-0fb14efe8c47
-	github.com/hashicorp/hcl v0.0.0-20180404174102-ef8a98b0bbce
-	github.com/howeyc/gopass v0.0.0-20170109162249-bf9dde6d0d2c
-	github.com/imdario/mergo v0.0.0-20141206190957-6633656539c1
-	github.com/inconshreveable/mousetrap v1.0.0
-	github.com/istio/glog v0.0.0-20180224222734-2cc4b790554d
-	github.com/istio/tools v0.0.0-20180621152908-5b04c5ff8bfc
-	github.com/jinzhu/gorm v1.9.1
-	github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a
-	github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be
-	github.com/magiconair/properties v1.8.0
-	github.com/mattn/go-isatty v0.0.3
-	github.com/matttproud/golang_protobuf_extensions v1.0.1
-	github.com/microcosm-cc/bluemonday v1.0.0
-	github.com/mitchellh/mapstructure v0.0.0-20180715050151-f15292f7a699
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
-	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742
-	github.com/natefinch/lumberjack v0.0.0-20170531160350-a96e63847dc3
-	github.com/pelletier/go-toml v1.2.0
-	github.com/pmezard/go-difflib v1.0.0
-	github.com/prometheus/client_golang v0.9.0-pre1
-	github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910
-	github.com/prometheus/common v0.0.0-20180801064454-c7de2306084e
-	github.com/prometheus/procfs v0.0.0-20180725123919-05ee40e3a273
-	github.com/sevenNt/wzap v1.0.0
-	github.com/shurcooL/sanitized_anchor_name v0.0.0-20170918181015-86672fcb3f95
-	github.com/spf13/afero v1.1.1
-	github.com/spf13/cast v1.2.0
-	github.com/spf13/cobra v0.0.3
-	github.com/spf13/jwalterweatherman v0.0.0-20180109140146-7c0cea34c8ec
-	github.com/spf13/pflag v1.0.1
-	github.com/spf13/viper v1.0.2
-	github.com/stretchr/testify v1.2.2
-	github.com/ugorji/go v1.1.1
-	go.uber.org/atomic v1.3.2
-	go.uber.org/multierr v1.1.0
-	go.uber.org/zap v1.9.0
-	golang.org/x/crypto v0.0.0-20180802221240-56440b844dfe
-	golang.org/x/net v0.0.0-20180801234040-f4c29de78a2a
-	golang.org/x/oauth2 v0.0.0-20180724155351-3d292e4d0cdc
-	golang.org/x/sys v0.0.0-20180802203216-0ffbfd41fbef
-	golang.org/x/text v0.3.0
-	golang.org/x/time v0.0.0-20180412165947-fbb02b2291d2
-	google.golang.org/appengine v1.1.0
-	google.golang.org/genproto v0.0.0-20180731170733-daca94659cb5
-	google.golang.org/grpc v1.14.0
-	gopkg.in/go-playground/validator.v8 v8.18.2
-	gopkg.in/inf.v0 v0.9.1
-	gopkg.in/russross/blackfriday.v2 v2.0.0
-	gopkg.in/yaml.v2 v2.2.1
-	istio.io/api v0.0.0-20180730173215-123b0a79a4db
-	istio.io/istio v0.0.0-20180723195305-a66a221bfe4c
-	istio.io/tools v0.0.0-20180621152908-5b04c5ff8bfc
-	k8s.io/api v0.0.0-20180601181742-8b7507fac302
-	k8s.io/apiextensions-apiserver v0.0.0-20180601203502-8e7f43002fec
-	k8s.io/apimachinery v0.0.0-20180601181227-17529ec7eadb
-	k8s.io/client-go v0.0.0-20180619232744-a312bfe35c40
+	github.com/fsnotify/fsnotify v1.5.4 // indirect
+	github.com/hashicorp/hcl v1.0.0 // indirect
+	github.com/magiconair/properties v1.8.6 // indirect
+	github.com/mitchellh/mapstructure v1.5.0 // indirect
+	github.com/pelletier/go-toml v1.9.5 // indirect
+	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
+	github.com/spf13/afero v1.8.2 // indirect
+	github.com/spf13/cast v1.5.0 // indirect
+	github.com/spf13/jwalterweatherman v1.1.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/subosito/gotenv v1.3.0 // indirect
+	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
+	golang.org/x/text v0.3.7 // indirect
+	gopkg.in/ini.v1 v1.66.4 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
+	gopkg.in/yaml.v3 v3.0.0 // indirect
 )
